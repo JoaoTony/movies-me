@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react'
 
-import styles from "./home.styles";
+import styles from './home.styles'
 import { View } from 'react-native'
 
 const Home: FC = () => {
