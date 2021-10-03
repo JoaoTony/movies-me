@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
 
-import styles from './home.styles'
-import { View } from 'react-native'
+import { Container, Button, BText } from './home.styles'
 
-const Home: FC = () => {
+const Home: FC<{ navigation: any }> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-    </View>
+    <Container>
+      <Button onPress={() => navigation.navigate('Details', { name: 'Jane' })}>
+        <BText>Testing</BText>
+      </Button>
+    </Container>
   )
 }
 
