@@ -2,11 +2,10 @@
 import styled from 'styled-components/native'
 import { colors } from '../../utils/colors'
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
   background-color: ${colors.dark};
-  justify-content: flex-start;
-  align-items: center;
+
 `
 export const Button = styled.TouchableOpacity`
   width: 100px;
