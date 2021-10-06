@@ -10,7 +10,7 @@ const Stak = createNativeStackNavigator()
 const Router: FC = () => {
   return (
     <Stak.Navigator>
-      <Stak.Screen name="Home" component={Home} />
+      <Stak.Screen name="Home" component={Home} options={{ headerShown: false }}/>
       <Stak.Screen name="Details" component={Details} />
     </Stak.Navigator>
   )

@@ -12,6 +12,7 @@ const App: FC = () => {
       <NavigationContainer>
         <Router />
       </NavigationContainer>
+      <StatusBar style="light"/>
     </View>
   )
 }
