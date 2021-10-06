@@ -6,10 +6,11 @@ import { LinearGradient } from 'expo-linear-gradient'
 const { width } = Dimensions.get('screen')
 
 export const Container = styled.TouchableOpacity`
-  width: ${width / 2.1}px;
+  width: ${width / 1.9}px;
   height: ${(width / 2.1) * 2}px;
-  margin: 0 12px;
+  padding: 0 10px;
   border-radius: 12px;
+  margin-top: 50px;
 `
 
 export const Gradient = styled(LinearGradient)`

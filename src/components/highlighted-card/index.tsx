@@ -15,7 +15,7 @@ import Stars from '../stars'
 
 const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars }) => {
   return (
-    <Container>
+    <Container activeOpacity={0.8}>
       <Gradient colors={[colors.gray01, 'transparent']}>
         <MovieImg source={img}/>
       </Gradient>

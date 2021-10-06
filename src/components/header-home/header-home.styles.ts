@@ -11,7 +11,6 @@ export const Header = styled.View`
   border-radius: 6px;
   margin-left: 12px;
   margin-right: 12px;
-  margin-bottom: 20px;
   margin-top: 60px;
   flex-direction: row;
   justify-content: space-between;

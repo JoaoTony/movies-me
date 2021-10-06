@@ -5,6 +5,4 @@ const { width } = Dimensions.get('screen')
 
 export const Container = styled.View`
   width: ${width}px;
-  
-
 `
