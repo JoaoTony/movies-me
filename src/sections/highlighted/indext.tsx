@@ -3,6 +3,7 @@ import React, { FC, useRef, useState, useEffect } from 'react'
 import { FlatList, Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
 import HighlightedCard from '../../components/highlighted-card'
+import { HighlightedProps, SideSpacing } from './highlighted.types'
 
 import { data as fakeData } from '../../constants/fake-data'
 
@@ -11,7 +12,7 @@ const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
 
 const Highlighted: FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<HighlightedProps[] | any[]>([])
 
   useEffect(() => {
     setData([{ key: 'left-spacing' }, ...fakeData, { key: 'right-spacing' }])
@@ -52,7 +53,7 @@ const Highlighted: FC = () => {
               style={{
                 transform: [{ translateY }]
               }}
-              key={item.id}
+              key={item.id.toString()}
             >
               <HighlightedCard
                 img={item.img}
