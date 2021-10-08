@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { NavigationProp } from '@react-navigation/native'
+
 export type HighlightedProps = {
   id: string
   img: any
@@ -9,4 +12,8 @@ export type HighlightedProps = {
 export interface SideSpacing {
   key: string
   id?: string
+}
+
+export type NavigationProps = {
+  navigation: NavigationProp<any>
 }

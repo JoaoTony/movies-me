@@ -3,14 +3,14 @@ import React, { FC, useRef, useState, useEffect } from 'react'
 import { FlatList, Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
 import HighlightedCard from '../../components/highlighted-card'
-import { HighlightedProps, SideSpacing } from './highlighted.types'
+import { HighlightedProps, SideSpacing, NavigationProps } from './highlighted.types'
 
 import { data as fakeData } from '../../constants/fake-data'
 
 const { width } = Dimensions.get('screen')
 const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
 
-const Highlighted: FC = () => {
+const Highlighted: FC<NavigationProps> = ({ navigation }) => {
   const scrollX = useRef(new Animated.Value(0)).current
   const [data, setData] = useState<HighlightedProps[] | any[]>([])
 
@@ -59,6 +59,7 @@ const Highlighted: FC = () => {
                 img={item.img}
                 title={item.title}
                 stars={item.stars}
+                navigation={navigation}
               />
             </Animated.View>
           )

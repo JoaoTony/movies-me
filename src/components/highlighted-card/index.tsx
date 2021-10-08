@@ -13,9 +13,13 @@ import { HighlightedProps } from './highlighted.types'
 
 import Stars from '../stars'
 
-const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars }) => {
+const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars, navigation }) => {
+  const handleDetails = (): any => {
+    navigation.navigate('Details', { name: 'Jane' })
+  }
+
   return (
-    <Container activeOpacity={0.8}>
+    <Container activeOpacity={0.8} onPress={() => handleDetails()}>
       <Gradient colors={[colors.gray01, 'transparent']}>
         <MovieImg source={img}/>
       </Gradient>

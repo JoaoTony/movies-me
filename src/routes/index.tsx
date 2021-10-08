@@ -12,7 +12,7 @@ const Router: FC = () => {
   return (
     <Stak.Navigator>
       <Stak.Screen name="BottonTabs" component={BottonTabs} options={{ headerShown: false }}/>
-      <Stak.Screen name="Details" component={Details} />
+      <Stak.Screen name="Details" component={Details} options={{ headerShown: false }}/>
     </Stak.Navigator>
   )
 }

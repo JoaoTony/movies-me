@@ -10,7 +10,7 @@ const Home: FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <Container>
       <HeaderHome />
-      <Highlighted />
+      <Highlighted navigation={navigation}/>
       <MostRecent type="recent" />
       <MostRecent type="seen" />
       {true && (
