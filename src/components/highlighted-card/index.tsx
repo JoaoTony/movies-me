@@ -8,14 +8,17 @@ import {
   MovieImg,
   Info
 } from './highlighted-card.styles'
+import { useNavigationContext } from '../../context'
 
 import { HighlightedProps } from './highlighted.types'
 
 import Stars from '../stars'
 
-const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars, navigation }) => {
+const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars, description, navigation }) => {
+  const { handleInfoData } = useNavigationContext()
   const handleDetails = (): any => {
-    navigation.navigate('Details', { name: 'Jane' })
+    handleInfoData({ id: '', img, title, stars, description: description || '' })
+    navigation.navigate('Details', { img, title, stars, description: description || '' })
   }
 
   return (

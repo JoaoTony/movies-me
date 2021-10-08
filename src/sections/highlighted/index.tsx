@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useRef, useState, useEffect } from 'react'
+import { useNavigation } from '@react-navigation/core'
 import { FlatList, Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
 import HighlightedCard from '../../components/highlighted-card'
@@ -10,9 +11,10 @@ import { data as fakeData } from '../../constants/fake-data'
 const { width } = Dimensions.get('screen')
 const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
 
-const Highlighted: FC<NavigationProps> = ({ navigation }) => {
+const Highlighted: FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current
   const [data, setData] = useState<HighlightedProps[] | any[]>([])
+  const navigation = useNavigation()
 
   useEffect(() => {
     setData([{ key: 'left-spacing' }, ...fakeData, { key: 'right-spacing' }])
@@ -59,6 +61,7 @@ const Highlighted: FC<NavigationProps> = ({ navigation }) => {
                 img={item.img}
                 title={item.title}
                 stars={item.stars}
+                description={item.description}
                 navigation={navigation}
               />
             </Animated.View>
