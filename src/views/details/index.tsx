@@ -16,10 +16,10 @@ import {
   GobackGradient
 } from './details.styles'
 import { colors } from '../../utils/colors'
-import { useRoute, useNavigation } from '@react-navigation/core'
+import { useRoute } from '@react-navigation/core'
 import { IRoute } from '../../types/navigation-types'
 import Stars from '../../components/stars'
-
+import GoBackButton from '../../components/go-back-button'
 import { DetailsProps } from './details.types'
 
 const { height } = Dimensions.get('screen')
@@ -27,9 +27,6 @@ const { height } = Dimensions.get('screen')
 const Details: FC<DetailsProps> = () => {
   const heightt = React.useRef(new Animated.Value(0)).current
   const route = useRoute()
-  const navigation = useNavigation()
-
-  const handleGoBack = (): void => navigation.goBack()
 
   const { params } = route as IRoute
 
@@ -46,9 +43,7 @@ const Details: FC<DetailsProps> = () => {
     <Container>
       <Image source={params.img} />
       <GobackGradient colors={['#000', 'transparent']} >
-        <GoBack activeOpacity={0.8} onPress={() => handleGoBack()}>
-          <GoBackIcon style={{ transform: [{ rotateY: '180deg' }] }} source={require('../../../assets/next.png')}/>
-        </GoBack>
+        <GoBackButton/>
       </GobackGradient>
       <Info style={{ height: heightt }}>
         <Gradient colors={['transparent', '#000']}>

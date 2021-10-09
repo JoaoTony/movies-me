@@ -8,7 +8,8 @@ const MostRecentCard: FC<MostRecntCardProps> = ({
   title,
   img,
   description,
-  stars
+  stars,
+  cardSize
 }) => {
   const navigation = useNavigation()
 
@@ -19,9 +20,9 @@ const MostRecentCard: FC<MostRecntCardProps> = ({
   }
 
   return (
-    <Container activeOpacity={0.8} onPress={() => handleDetails()}>
-      <Img source={img}/>
-      <Title numberOfLines={1}>{title}</Title>
+    <Container activeOpacity={0.8} onPress={() => handleDetails()} size={cardSize}>
+      <Img source={img} size={cardSize}/>
+      <Title numberOfLines={1} size={cardSize}>{title}</Title>
     </Container>
   )
 }
