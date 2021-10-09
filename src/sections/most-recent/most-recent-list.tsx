@@ -13,7 +13,12 @@ const MostRecentList: FC<{ type: 'recent' | 'seen' }> = ({ type }) => {
       showsHorizontalScrollIndicator={false}
       keyExtractor={item => item.id}
       renderItem={({ item }) => (
-        <MostRecentCard title={item.title} img={item.img}/>
+        <MostRecentCard
+          title={item.title}
+          img={item.img}
+          description={item.description}
+          stars={item.stars}
+        />
       )}
     />
   )

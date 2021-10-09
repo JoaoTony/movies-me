@@ -8,10 +8,28 @@ const { width, height } = Dimensions.get('screen')
 
 export const Container = styled.View`
   flex: 1;
+  background-color: ${colors.dark};
 `
 export const Image = styled.Image`
   width: ${width}px;
   height: ${height}px;
+`
+export const GoBack = styled.TouchableOpacity`
+  width: 24px;
+  height: 24px;
+`
+
+export const GobackGradient = styled(LinearGradient)`
+  width: 100%;
+  height: 100px;
+  padding-left: 10px;
+  padding-top: 50px;
+  position: absolute;
+`
+
+export const GoBackIcon = styled.Image`
+  width: 24px;
+  height: 24px;
 `
 
 export const Info = styled(Animated.View)`

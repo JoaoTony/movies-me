@@ -6,10 +6,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { NavigationContext } from './src/context'
 
 import Router from './src/routes'
+import { colors } from './src/utils/colors'
 
 const App: FC = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: colors.dark }}>
       <NavigationContext>
         <NavigationContainer>
           <Router />

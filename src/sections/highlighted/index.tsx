@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useRef, useState, useEffect } from 'react'
-import { useNavigation } from '@react-navigation/core'
-import { FlatList, Dimensions, Animated, View } from 'react-native'
+import { Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
 import HighlightedCard from '../../components/highlighted-card'
-import { HighlightedProps, SideSpacing, NavigationProps } from './highlighted.types'
+import { HighlightedProps } from './highlighted.types'
 
 import { data as fakeData } from '../../constants/fake-data'
 
@@ -14,7 +13,6 @@ const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
 const Highlighted: FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current
   const [data, setData] = useState<HighlightedProps[] | any[]>([])
-  const navigation = useNavigation()
 
   useEffect(() => {
     setData([{ key: 'left-spacing' }, ...fakeData, { key: 'right-spacing' }])
@@ -62,7 +60,6 @@ const Highlighted: FC = () => {
                 title={item.title}
                 stars={item.stars}
                 description={item.description}
-                navigation={navigation}
               />
             </Animated.View>
           )

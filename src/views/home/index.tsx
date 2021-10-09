@@ -13,11 +13,6 @@ const Home: FC<{ navigation: any }> = ({ navigation }) => {
       <Highlighted />
       <MostRecent type="recent" />
       <MostRecent type="seen" />
-      {true && (
-        <Button onPress={() => navigation.navigate('Details', { name: 'Jane' })}>
-          <BText>Testing</BText>
-        </Button>
-      )}
     </Container>
   )
 }

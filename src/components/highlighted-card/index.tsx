@@ -8,17 +8,19 @@ import {
   MovieImg,
   Info
 } from './highlighted-card.styles'
-import { useNavigationContext } from '../../context'
 
 import { HighlightedProps } from './highlighted.types'
+import { useNavigation, NavigationProp } from '@react-navigation/core'
 
 import Stars from '../stars'
 
-const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars, description, navigation }) => {
-  const { handleInfoData } = useNavigationContext()
+const HighlightedCard: FC<HighlightedProps> = ({ img, title, stars, description }) => {
+  const navigation = useNavigation()
+
+  const { navigate } = navigation as NavigationProp<any>
+
   const handleDetails = (): any => {
-    handleInfoData({ id: '', img, title, stars, description: description || '' })
-    navigation.navigate('Details', { img, title, stars, description: description || '' })
+    navigate('Details', { img, title, stars, description: description || '' })
   }
 
   return (

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
-import { Animated, Dimensions } from 'react-native'
+import { Animated, Dimensions, View } from 'react-native'
 import {
   Image,
   Info,
@@ -10,11 +10,14 @@ import {
   GradientContent,
   Date,
   Description,
-  Classification
+  Classification,
+  GoBack,
+  GoBackIcon,
+  GobackGradient
 } from './details.styles'
 import { colors } from '../../utils/colors'
-import { useRoute } from '@react-navigation/core'
-import { IRoute } from '../../components/types/navigation-types'
+import { useRoute, useNavigation } from '@react-navigation/core'
+import { IRoute } from '../../types/navigation-types'
 import Stars from '../../components/stars'
 
 import { DetailsProps } from './details.types'
@@ -24,13 +27,16 @@ const { height } = Dimensions.get('screen')
 const Details: FC<DetailsProps> = () => {
   const heightt = React.useRef(new Animated.Value(0)).current
   const route = useRoute()
+  const navigation = useNavigation()
+
+  const handleGoBack = (): void => navigation.goBack()
 
   const { params } = route as IRoute
 
   React.useEffect(() => {
     Animated.spring(heightt, {
       toValue: height * 0.8,
-      bounciness: 0,
+      bounciness: 10,
       speed: 6,
       useNativeDriver: false
     }).start()
@@ -39,6 +45,11 @@ const Details: FC<DetailsProps> = () => {
   return (
     <Container>
       <Image source={params.img} />
+      <GobackGradient colors={['#000', 'transparent']} >
+        <GoBack activeOpacity={0.8} onPress={() => handleGoBack()}>
+          <GoBackIcon style={{ transform: [{ rotateY: '180deg' }] }} source={require('../../../assets/next.png')}/>
+        </GoBack>
+      </GobackGradient>
       <Info style={{ height: heightt }}>
         <Gradient colors={['transparent', '#000']}>
           <GradientContent>
