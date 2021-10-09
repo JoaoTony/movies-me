@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
 
 import { Header as Container, Logo, Search, SearchIcon } from './header-home.styles'

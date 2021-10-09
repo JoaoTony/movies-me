@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import { Container, Title, Img } from './most-recent-card.styles'
 import { useNavigation, NavigationProp } from '@react-navigation/core'

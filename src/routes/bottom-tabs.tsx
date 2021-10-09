@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
 import { Image, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'

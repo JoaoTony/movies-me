@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
 import { FlatList } from 'react-native'
 
@@ -14,6 +13,7 @@ const MostRecentList: FC<{ type: 'recent' | 'seen' }> = ({ type }) => {
       keyExtractor={item => item.id}
       renderItem={({ item }) => (
         <MostRecentCard
+          key={item.id}
           title={item.title}
           img={item.img}
           description={item.description}

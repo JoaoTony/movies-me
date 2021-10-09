@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useRef, useState, useEffect } from 'react'
 import { Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
