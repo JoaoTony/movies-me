@@ -30,7 +30,7 @@ const Highlighted: FC = () => {
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: true }
         )}
-        scrollEventThrottle={18}
+        scrollEventThrottle={3}
         renderItem={({ item, index }) => {
           const inputRange = [
             (index - 2) * width / 1.9,
