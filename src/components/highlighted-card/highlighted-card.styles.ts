@@ -18,6 +18,7 @@ export const Gradient = styled(LinearGradient)`
   height: 78%;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  border-radius: 12px;
   padding: 10px;
 `
 

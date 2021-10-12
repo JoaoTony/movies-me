@@ -10,9 +10,10 @@ export const Container = styled.View`
   flex: 1;
   background-color: ${colors.dark};
 `
-export const Image = styled.Image`
+export const Image = styled(Animated.Image)`
   width: ${width}px;
   height: ${height}px;
+  margin-top: 0;
 `
 export const GoBack = styled.TouchableOpacity`
   width: 24px;
@@ -25,6 +26,7 @@ export const GobackGradient = styled(LinearGradient)`
   padding-left: 10px;
   padding-top: 50px;
   position: absolute;
+  z-index: 5;
 `
 
 export const GoBackIcon = styled.Image`
@@ -34,7 +36,7 @@ export const GoBackIcon = styled.Image`
 
 export const Info = styled(Animated.View)`
   width: ${width}px;
-
+  height: ${height}px;
   position: absolute;
   bottom: 0;
 `
@@ -45,17 +47,17 @@ export const Gradient = styled(LinearGradient)`
   justify-content: flex-end;
 `
 
-export const GradientContent = styled.View`
+export const GradientContent = styled(Animated.View)`
   width: ${width}px;
-  height: 50%;
   padding: 10px;
+  padding-bottom: 40px;
 `
 
 export const Title = styled.Text`
   font-size: 22px;
-  color: ${colors.white01};
+  font-weight: 900;
+  color: ${colors.red01};
   margin-bottom: 2px;
-
 `
 
 export const Date = styled.Text`

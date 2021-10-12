@@ -1,5 +1,5 @@
 Arguments: 
-  /home/jtony/.nvm/versions/node/v14.18.0/bin/node /home/jtony/.nvm/versions/node/v14.18.0/bin/yarn install
+  /home/jtony/.nvm/versions/node/v14.18.0/bin/node /home/jtony/.nvm/versions/node/v14.18.0/bin/yarn add @types/react-native-image-base64 --dev
 
 PATH: 
   /home/jtony/.nvm/versions/node/v14.18.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jtony/Android/Sdk/emulator:/home/jtony/Android/Sdk/tools:/home/jtony/Android/Sdk/tools/bin:/home/jtony/Android/Sdk/platform-tools
@@ -14,8 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
+  Error: https://registry.yarnpkg.com/@types%2freact-native-image-base64: Not found
+      at Request.params.callback [as _callback] (/home/jtony/.nvm/versions/node/v14.18.0/lib/node_modules/yarn/lib/cli.js:66140:18)
+      at Request.self.callback (/home/jtony/.nvm/versions/node/v14.18.0/lib/node_modules/yarn/lib/cli.js:140885:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/home/jtony/.nvm/versions/node/v14.18.0/lib/node_modules/yarn/lib/cli.js:141857:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/home/jtony/.nvm/versions/node/v14.18.0/lib/node_modules/yarn/lib/cli.js:141779:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -28,30 +37,40 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/masked-view": "^0.1.11",
       "@react-navigation/bottom-tabs": "^6.0.7",
       "@react-navigation/native": "^6.0.4",
       "@react-navigation/native-stack": "^6.2.2",
       "@types/styled-components-react-native": "^5.1.1",
+      "axios": "^0.22.0",
       "expo": "~42.0.1",
+      "expo-linear-gradient": "^9.2.0",
       "expo-status-bar": "~1.0.4",
       "react": "16.13.1",
       "react-dom": "16.13.1",
       "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+      "react-native-image-base64": "^0.1.4",
       "react-native-safe-area-context": "3.2.0",
       "react-native-screens": "~3.4.0",
+      "react-native-shared-element": "^0.8.3",
+      "react-native-svg": "^12.1.1",
       "react-native-web": "~0.13.12",
-      "styled-components": "^5.3.1"
+      "react-navigation-shared-element": "^3.1.3",
+      "styled-components": "^5.3.1",
+      "uuid": "^8.3.2"
     },
     "devDependencies": {
       "@babel/core": "^7.9.0",
       "@types/react": "~16.9.35",
       "@types/react-native": "~0.63.2",
+      "@types/uuid": "^8.3.1",
       "@typescript-eslint/eslint-plugin": "^4.32.0",
       "eslint": "^7.32.0",
       "eslint-config-standard-with-typescript": "11",
       "eslint-plugin-import": "^2.24.2",
       "eslint-plugin-node": "^11.1.0",
       "eslint-plugin-promise": "^5.1.0",
+      "eslint-plugin-react": "^7.26.1",
       "eslint-plugin-standard": "^5.0.0",
       "git-commit-msg-linter": "^3.2.8",
       "husky": "^7.0.2",
@@ -1640,6 +1659,11 @@ Lockfile:
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
   
+  "@react-native-community/masked-view@^0.1.11":
+    version "0.1.11"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
+    integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
+  
   "@react-navigation/bottom-tabs@^6.0.7":
     version "6.0.7"
     resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-6.0.7.tgz#3a0772f57b588d10853d05407fc3c0c48c6bb8ba"
@@ -1812,6 +1836,11 @@ Lockfile:
       "@types/hoist-non-react-statics" "*"
       "@types/react" "*"
       csstype "^3.0.2"
+  
+  "@types/uuid@^8.3.1":
+    version "8.3.1"
+    resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
+    integrity sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==
   
   "@types/yargs-parser@*":
     version "20.2.1"
@@ -2199,6 +2228,15 @@ Lockfile:
       define-properties "^1.1.3"
       es-abstract "^1.18.0-next.1"
   
+  array.prototype.flatmap@^1.2.4:
+    version "1.2.5"
+    resolved "https://registry.yarnpkg.com/array.prototype.flatmap/-/array.prototype.flatmap-1.2.5.tgz#908dc82d8a406930fdf38598d51e7411d18d4446"
+    integrity sha512-08u6rVyi1Lj7oqWbS9nUxliETrtIROT4XGTA4D/LWGten6E3ocm7cy9SIrmNHOL5XVbVuckUp3X6Xyg8/zpvHA==
+    dependencies:
+      call-bind "^1.0.0"
+      define-properties "^1.1.3"
+      es-abstract "^1.19.0"
+  
   asap@~2.0.3, asap@~2.0.6:
     version "2.0.6"
     resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
@@ -2235,6 +2273,13 @@ Lockfile:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+  
+  axios@^0.22.0:
+    version "0.22.0"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.22.0.tgz#bf702c41fb50fbca4539589d839a077117b79b25"
+    integrity sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==
+    dependencies:
+      follow-redirects "^1.14.4"
   
   babel-plugin-dynamic-import-node@^2.3.3:
     version "2.3.3"
@@ -2386,6 +2431,11 @@ Lockfile:
     version "2.19.0"
     resolved "https://registry.yarnpkg.com/blueimp-md5/-/blueimp-md5-2.19.0.tgz#b53feea5498dcb53dc6ec4b823adb84b729c4af0"
     integrity sha512-DRQrD6gJyy8FbiE4s+bDoXS9hiW3Vbx5uCdwvcCf3zLHL+Iv7LtGHLpr+GZV8rHG8tK766FGYBwRbu8pELTt+w==
+  
+  boolbase@^1.0.0, boolbase@~1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
+    integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
   
   bplist-creator@0.0.8:
     version "0.0.8"
@@ -2917,6 +2967,16 @@ Lockfile:
       hyphenate-style-name "^1.0.2"
       isobject "^3.0.1"
   
+  css-select@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/css-select/-/css-select-2.1.0.tgz#6a34653356635934a81baca68d0255432105dbef"
+    integrity sha512-Dqk7LQKpwLoH3VovzZnkzegqNSuAziQyNZUcrdDM401iY+R5NkGBXGmtO05/yaXQziALuPogeG0b7UAgjnTJTQ==
+    dependencies:
+      boolbase "^1.0.0"
+      css-what "^3.2.1"
+      domutils "^1.7.0"
+      nth-check "^1.0.2"
+  
   css-to-react-native@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-3.0.0.tgz#62dbe678072a824a689bcfee011fc96e02a7d756"
@@ -2925,6 +2985,19 @@ Lockfile:
       camelize "^1.0.0"
       css-color-keywords "^1.0.0"
       postcss-value-parser "^4.0.2"
+  
+  css-tree@^1.0.0-alpha.39:
+    version "1.1.3"
+    resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.1.3.tgz#eb4870fb6fd7707327ec95c2ff2ab09b5e8db91d"
+    integrity sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==
+    dependencies:
+      mdn-data "2.0.14"
+      source-map "^0.6.1"
+  
+  css-what@^3.2.1:
+    version "3.4.2"
+    resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
+    integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
   
   csstype@^3.0.2:
     version "3.0.9"
@@ -3064,6 +3137,32 @@ Lockfile:
     dependencies:
       esutils "^2.0.2"
   
+  dom-serializer@0:
+    version "0.2.2"
+    resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.2.2.tgz#1afb81f533717175d478655debc5e332d9f9bb51"
+    integrity sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==
+    dependencies:
+      domelementtype "^2.0.1"
+      entities "^2.0.0"
+  
+  domelementtype@1:
+    version "1.3.1"
+    resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.1.tgz#d048c44b37b0d10a7f2a3d5fee3f4333d790481f"
+    integrity sha512-BSKB+TSpMpFI/HOxCNr1O8aMOTZ8hT3pM3GQ0w/mWRmkhEDSFJkkyzz4XQsBV44BChwGkrDfMyjVD0eA2aFV3w==
+  
+  domelementtype@^2.0.1:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-2.2.0.tgz#9a0b6c2782ed6a1c7323d42267183df9bd8b1d57"
+    integrity sha512-DtBMo82pv1dFtUmHyr48beiuq792Sxohr+8Hm9zoxklYPfa6n0Z3Byjj2IV7bmr2IyqClnqEQhfgHJJ5QF0R5A==
+  
+  domutils@^1.7.0:
+    version "1.7.0"
+    resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.7.0.tgz#56ea341e834e06e6748af7a1cb25da67ea9f8c2a"
+    integrity sha512-Lgd2XcJ/NjEw+7tFvfKxOzCYKZsdct5lczQ2ZaQY8Djz7pfAD3Gbp8ySJWtreII/vDlMVmxwa6pHmdxIYgttDg==
+    dependencies:
+      dom-serializer "0"
+      domelementtype "1"
+  
   ee-first@1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -3110,6 +3209,11 @@ Lockfile:
     dependencies:
       ansi-colors "^4.1.1"
   
+  entities@^2.0.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
+    integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
+  
   envinfo@^7.7.2:
     version "7.8.1"
     resolved "https://registry.yarnpkg.com/envinfo/-/envinfo-7.8.1.tgz#06377e3e5f4d379fea7ac592d5ad8927e0c4d475"
@@ -3154,6 +3258,32 @@ Lockfile:
       is-negative-zero "^2.0.1"
       is-regex "^1.1.4"
       is-string "^1.0.7"
+      object-inspect "^1.11.0"
+      object-keys "^1.1.1"
+      object.assign "^4.1.2"
+      string.prototype.trimend "^1.0.4"
+      string.prototype.trimstart "^1.0.4"
+      unbox-primitive "^1.0.1"
+  
+  es-abstract@^1.19.0, es-abstract@^1.19.1:
+    version "1.19.1"
+    resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.19.1.tgz#d4885796876916959de78edaa0df456627115ec3"
+    integrity sha512-2vJ6tjA/UfqLm2MPs7jxVybLoB8i1t1Jd9R3kISld20sIxPcTbLuggQOUxeWeAvIUkduv/CfMjuh4WmiXr2v9w==
+    dependencies:
+      call-bind "^1.0.2"
+      es-to-primitive "^1.2.1"
+      function-bind "^1.1.1"
+      get-intrinsic "^1.1.1"
+      get-symbol-description "^1.0.0"
+      has "^1.0.3"
+      has-symbols "^1.0.2"
+      internal-slot "^1.0.3"
+      is-callable "^1.2.4"
+      is-negative-zero "^2.0.1"
+      is-regex "^1.1.4"
+      is-shared-array-buffer "^1.0.1"
+      is-string "^1.0.7"
+      is-weakref "^1.0.1"
       object-inspect "^1.11.0"
       object-keys "^1.1.1"
       object.assign "^4.1.2"
@@ -3269,6 +3399,26 @@ Lockfile:
     version "5.1.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-5.1.0.tgz#fb2188fb734e4557993733b41aa1a688f46c6f24"
     integrity sha512-NGmI6BH5L12pl7ScQHbg7tvtk4wPxxj8yPHH47NvSmMtFneC077PSeY3huFj06ZWZvtbfxSPt3RuOQD5XcR4ng==
+  
+  eslint-plugin-react@^7.26.1:
+    version "7.26.1"
+    resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.26.1.tgz#41bcfe3e39e6a5ac040971c1af94437c80daa40e"
+    integrity sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ==
+    dependencies:
+      array-includes "^3.1.3"
+      array.prototype.flatmap "^1.2.4"
+      doctrine "^2.1.0"
+      estraverse "^5.2.0"
+      jsx-ast-utils "^2.4.1 || ^3.0.0"
+      minimatch "^3.0.4"
+      object.entries "^1.1.4"
+      object.fromentries "^2.0.4"
+      object.hasown "^1.0.0"
+      object.values "^1.1.4"
+      prop-types "^15.7.2"
+      resolve "^2.0.0-next.3"
+      semver "^6.3.0"
+      string.prototype.matchall "^4.0.5"
   
   eslint-plugin-standard@^5.0.0:
     version "5.0.0"
@@ -3508,6 +3658,11 @@ Lockfile:
     version "9.2.0"
     resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
     integrity sha512-R5jAx5j3MqrhKFB307FBpaHtYSYeVIFX/rVforBF5inKonYjXRWVhjGoBjolF4geAryNamC3NKhMfxyaaB0W6Q==
+  
+  expo-linear-gradient@^9.2.0:
+    version "9.2.0"
+    resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-9.2.0.tgz#5ae16fcb8f141b1c51dc36bd4493dfd6566a9511"
+    integrity sha512-LnW2u9OT6GeyC6T8qEGjFYfNSk4KIBAwU0aRSjM4Y8hckWqhtKngGDz46DqGmJBzvZMSKuZZvj5xKn794r54ag==
   
   expo-modules-autolinking@^0.0.3:
     version "0.0.3"
@@ -3821,6 +3976,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.2.tgz#64bfed5cb68fe3ca78b3eb214ad97b63bedce561"
     integrity sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==
   
+  follow-redirects@^1.14.4:
+    version "1.14.4"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.4.tgz#838fdf48a8bbdd79e52ee51fb1c94e3ed98b9379"
+    integrity sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g==
+  
   fontfaceobserver@^2.1.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.1.0.tgz#e2705d293e2c585a6531c2a722905657317a2991"
@@ -4104,7 +4264,7 @@ Lockfile:
     dependencies:
       source-map "^0.7.3"
   
-  hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
+  hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
     integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -4462,6 +4622,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
     integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
   
+  is-shared-array-buffer@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/is-shared-array-buffer/-/is-shared-array-buffer-1.0.1.tgz#97b0c85fbdacb59c9c446fe653b82cf2b5b7cfe6"
+    integrity sha512-IU0NmyknYZN0rChcKhRO1X8LYz5Isj/Fsqh8NJOSf+N/hCOTwy29F32Ik7a+QszE63IdvmwdTPDd6cZ5pg4cwA==
+  
   is-stream@^1.0.1, is-stream@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
@@ -4490,6 +4655,13 @@ Lockfile:
     version "0.1.0"
     resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz#3f26c76a809593b52bfa2ecb5710ed2779b522a7"
     integrity sha512-knxG2q4UC3u8stRGyAVJCOdxFmv5DZiRcdlIaAQXAbSfJya+OhopNotLQrstBhququ4ZpuKbDc/8S6mgXgPFPw==
+  
+  is-weakref@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/is-weakref/-/is-weakref-1.0.1.tgz#842dba4ec17fa9ac9850df2d6efbc1737274f2a2"
+    integrity sha512-b2jKc2pQZjaeFYWEf7ScFj+Be1I+PXmlu572Q8coTXZ+LD/QQZ7ShPMst8h16riVgyXTQwUsFEl74mDvc/3MHQ==
+    dependencies:
+      call-bind "^1.0.0"
   
   is-windows@^1.0.2:
     version "1.0.2"
@@ -4730,6 +4902,14 @@ Lockfile:
     version "0.0.0"
     resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
     integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
+  
+  "jsx-ast-utils@^2.4.1 || ^3.0.0":
+    version "3.2.1"
+    resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-3.2.1.tgz#720b97bfe7d901b927d87c3773637ae8ea48781b"
+    integrity sha512-uP5vu8xfy2F9A6LGC22KO7e2/vGTS1MhP+18f++ZNlf0Ohaxbc9nIEwHAsejlJKyzfZzU5UIhe5ItYkitcZnZA==
+    dependencies:
+      array-includes "^3.1.3"
+      object.assign "^4.1.2"
   
   kind-of@^1.1.0:
     version "1.1.0"
@@ -5027,6 +5207,11 @@ Lockfile:
     integrity sha512-3Tkp1piAHaworfcCgH0jKbTvj1jWWFgbvh2cXaNCgHwyTCBxxvD1Y04rmfpvdPm1P4oXMOpm6+2H7sr7v9v8Fw==
     dependencies:
       buffer-alloc "^1.1.0"
+  
+  mdn-data@2.0.14:
+    version "2.0.14"
+    resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
+    integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
   
   merge-stream@^1.0.1:
     version "1.0.1"
@@ -5528,6 +5713,13 @@ Lockfile:
     dependencies:
       path-key "^3.0.0"
   
+  nth-check@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
+    integrity sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
+    dependencies:
+      boolbase "~1.0.0"
+  
   nullthrows@^1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/nullthrows/-/nullthrows-1.1.1.tgz#7818258843856ae971eae4208ad7d7eb19a431b1"
@@ -5578,6 +5770,32 @@ Lockfile:
       define-properties "^1.1.3"
       has-symbols "^1.0.1"
       object-keys "^1.1.1"
+  
+  object.entries@^1.1.4:
+    version "1.1.5"
+    resolved "https://registry.yarnpkg.com/object.entries/-/object.entries-1.1.5.tgz#e1acdd17c4de2cd96d5a08487cfb9db84d881861"
+    integrity sha512-TyxmjUoZggd4OrrU1W66FMDG6CuqJxsFvymeyXI51+vQLN67zYfZseptRge703kKQdo4uccgAKebXFcRCzk4+g==
+    dependencies:
+      call-bind "^1.0.2"
+      define-properties "^1.1.3"
+      es-abstract "^1.19.1"
+  
+  object.fromentries@^2.0.4:
+    version "2.0.5"
+    resolved "https://registry.yarnpkg.com/object.fromentries/-/object.fromentries-2.0.5.tgz#7b37b205109c21e741e605727fe8b0ad5fa08251"
+    integrity sha512-CAyG5mWQRRiBU57Re4FKoTBjXfDoNwdFVH2Y1tS9PqCsfUTymAohOkEMSG3aRNKmv4lV3O7p1et7c187q6bynw==
+    dependencies:
+      call-bind "^1.0.2"
+      define-properties "^1.1.3"
+      es-abstract "^1.19.1"
+  
+  object.hasown@^1.0.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/object.hasown/-/object.hasown-1.1.0.tgz#7232ed266f34d197d15cac5880232f7a4790afe5"
+    integrity sha512-MhjYRfj3GBlhSkDHo6QmvgjRLXQ2zndabdf3nX0yTyZK9rPfxb6uRpAac8HXNLy1GpqWtZ81Qh4v3uOls2sRAg==
+    dependencies:
+      define-properties "^1.1.3"
+      es-abstract "^1.19.1"
   
   object.pick@^1.3.0:
     version "1.3.0"
@@ -6045,6 +6263,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
     integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
   
+  react-native-image-base64@^0.1.4:
+    version "0.1.4"
+    resolved "https://registry.yarnpkg.com/react-native-image-base64/-/react-native-image-base64-0.1.4.tgz#0a4687740de9b04df63e649c5946fc646bc0f4e9"
+    integrity sha512-WLdzwHdXFRLS9VStG1CG46+t+fcInjVWxKd1+AATElBhaAS3zwDHz7mYIZS1OX4VMuNClwl5G8dowuqUJ9aMGQ==
+  
   react-native-safe-area-context@3.2.0:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.2.0.tgz#06113c6b208f982d68ab5c3cebd199ca93db6941"
@@ -6056,6 +6279,19 @@ Lockfile:
     integrity sha512-cg+q9MRnVdeOcJyvJtqffoXLur/C2wHA/7IO2+FAipzTlgHbbM1mTuSM7qG+SeiQjoIs4mHOEf7A0ziPKW04sA==
     dependencies:
       warn-once "^0.1.0"
+  
+  react-native-shared-element@^0.8.3:
+    version "0.8.3"
+    resolved "https://registry.yarnpkg.com/react-native-shared-element/-/react-native-shared-element-0.8.3.tgz#c49b6acdca9e5ac27acc73ec7e7ddbaa7af35248"
+    integrity sha512-mbL0gWBaZgWc5YQUwwlzyUOToMbfE+QdNxlSK8MdRGX6ItssVH+JLbq8ilLRTNEO+cTFFosXdQwqBUAC4IPSww==
+  
+  react-native-svg@^12.1.1:
+    version "12.1.1"
+    resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.1.tgz#5f292410b8bcc07bbc52b2da7ceb22caf5bcaaee"
+    integrity sha512-NIAJ8jCnXGCqGWXkkJ1GTzO4a3Md5at5sagYV8Vh4MXYnL4z5Rh428Wahjhh+LIjx40EE5xM5YtwyJBqOIba2Q==
+    dependencies:
+      css-select "^2.1.0"
+      css-tree "^1.0.0-alpha.39"
   
   react-native-web@~0.13.12:
     version "0.13.18"
@@ -6103,6 +6339,13 @@ Lockfile:
       stacktrace-parser "^0.1.3"
       use-subscription "^1.0.0"
       whatwg-fetch "^3.0.0"
+  
+  react-navigation-shared-element@^3.1.3:
+    version "3.1.3"
+    resolved "https://registry.yarnpkg.com/react-navigation-shared-element/-/react-navigation-shared-element-3.1.3.tgz#c75084ca8cab09063297a39ff1110de0dc732aab"
+    integrity sha512-U1BZp7dEdcTNHggfkq3WEBlJeg4HwFhFdj7a0i0Uql/7mg2IHQg/bZaqM2jQvJITkABge6Hz5fZixIF8jyzpkg==
+    dependencies:
+      hoist-non-react-statics "^3.3.2"
   
   react-refresh@^0.4.0:
     version "0.4.3"
@@ -6184,6 +6427,14 @@ Lockfile:
     dependencies:
       extend-shallow "^3.0.2"
       safe-regex "^1.1.0"
+  
+  regexp.prototype.flags@^1.3.1:
+    version "1.3.1"
+    resolved "https://registry.yarnpkg.com/regexp.prototype.flags/-/regexp.prototype.flags-1.3.1.tgz#7ef352ae8d159e758c0eadca6f8fcb4eef07be26"
+    integrity sha512-JiBdRBq91WlY7uRJ0ds7R+dU02i6LKi8r3BuQhNXn+kmeLN+EfHhfjqMRis1zJxnlu88hq/4dx0P2OP3APRTOA==
+    dependencies:
+      call-bind "^1.0.2"
+      define-properties "^1.1.3"
   
   regexpp@^3.0.0, regexpp@^3.1.0:
     version "3.2.0"
@@ -6278,6 +6529,14 @@ Lockfile:
     version "1.20.0"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.20.0.tgz#629a013fb3f70755d6f0b7935cc1c2c5378b1975"
     integrity sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==
+    dependencies:
+      is-core-module "^2.2.0"
+      path-parse "^1.0.6"
+  
+  resolve@^2.0.0-next.3:
+    version "2.0.0-next.3"
+    resolved "https://registry.yarnpkg.com/resolve/-/resolve-2.0.0-next.3.tgz#d41016293d4a8586a39ca5d9b5f15cbea1f55e46"
+    integrity sha512-W8LucSynKUIDu9ylraa7ueVZ7hc0uAgJBxVsQSKOXOyle8a93qXhcz+XAXZ8bIq2d6i4Ehddn6Evt+0/UwKk6Q==
     dependencies:
       is-core-module "^2.2.0"
       path-parse "^1.0.6"
@@ -6681,7 +6940,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
     integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
   
-  source-map@^0.6.0, source-map@~0.6.1:
+  source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
     version "0.6.1"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
     integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
@@ -6806,6 +7065,20 @@ Lockfile:
       emoji-regex "^8.0.0"
       is-fullwidth-code-point "^3.0.0"
       strip-ansi "^6.0.1"
+  
+  string.prototype.matchall@^4.0.5:
+    version "4.0.6"
+    resolved "https://registry.yarnpkg.com/string.prototype.matchall/-/string.prototype.matchall-4.0.6.tgz#5abb5dabc94c7b0ea2380f65ba610b3a544b15fa"
+    integrity sha512-6WgDX8HmQqvEd7J+G6VtAahhsQIssiZ8zl7zKh1VDMFyL3hRTJP4FTNA3RbIp2TOQ9AYNDcc7e3fH0Qbup+DBg==
+    dependencies:
+      call-bind "^1.0.2"
+      define-properties "^1.1.3"
+      es-abstract "^1.19.1"
+      get-intrinsic "^1.1.1"
+      has-symbols "^1.0.2"
+      internal-slot "^1.0.3"
+      regexp.prototype.flags "^1.3.1"
+      side-channel "^1.0.4"
   
   string.prototype.trimend@^1.0.4:
     version "1.0.4"
@@ -7266,6 +7539,11 @@ Lockfile:
     version "7.0.3"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
     integrity sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
+  
+  uuid@^8.3.2:
+    version "8.3.2"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+    integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
   
   v8-compile-cache@^2.0.3:
     version "2.3.0"

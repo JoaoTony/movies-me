@@ -26,5 +26,5 @@ interface aa {
 }
 
 
-const codeToText = (codes: Array<number>): string => 
+export const codeToText = (codes: Array<number>): string => 
   codes.map(item => code[item.toString()]).join('/')

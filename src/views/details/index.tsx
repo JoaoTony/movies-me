@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC } from 'react'
 import { Animated, Dimensions, View } from 'react-native'
+import { codeToText } from '../../utils/code-gender-to-text'
 import {
   Image,
   Info,
@@ -25,14 +26,21 @@ import { DetailsProps } from './details.types'
 const { height } = Dimensions.get('screen')
 
 const Details: FC<DetailsProps> = () => {
-  const heightt = React.useRef(new Animated.Value(0)).current
+  const heightt = React.useRef(new Animated.Value(-height)).current
+  const translateY = React.useRef(new Animated.Value(200)).current 
   const route = useRoute()
 
   const { params } = route as IRoute
 
   React.useEffect(() => {
     Animated.spring(heightt, {
-      toValue: height * 0.8,
+      toValue: 0,
+      bounciness: 10,
+      speed: 6,
+      useNativeDriver: false
+    }).start()
+    Animated.spring(translateY, {
+      toValue: 0,
       bounciness: 10,
       speed: 6,
       useNativeDriver: false
@@ -41,17 +49,17 @@ const Details: FC<DetailsProps> = () => {
 
   return (
     <Container>
-      <Image source={params.img} />
+      <Image source={{ uri: `https://image.tmdb.org/t/p/original${params.img}` }} style={{  transform: [{ translateY: heightt }] }}/>
       <GobackGradient colors={['#000', 'transparent']} >
         <GoBackButton/>
       </GobackGradient>
-      <Info style={{ height: heightt }}>
+      <Info>
         <Gradient colors={['transparent', '#000']}>
-          <GradientContent>
+          <GradientContent style={{  transform: [{ translateY }] }}>
             <Title>{params.title}</Title>
             <Stars star={params.stars}/>
-            <Classification>classificacao: 16 anos</Classification>
-            <Date>2021 - Acao/Aventura - 4h 2m</Date>
+            <Date>{params.release_date}</Date>
+            <Date>{codeToText(params.genre_ids)}</Date>
             <Description>{params.description}</Description>
           </GradientContent>
         </Gradient>

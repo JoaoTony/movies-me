@@ -21,7 +21,7 @@ export interface NowPlaying {
     minimum: string
   }
   page: number
-  result: Array<NowPlayingResult>
+  results: Array<NowPlayingResult>
   total_pages: number
   total_results: number
 }

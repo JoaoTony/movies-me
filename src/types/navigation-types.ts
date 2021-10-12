@@ -2,7 +2,9 @@ interface IObject {
   description: string
   img: any
   stars: number
-  title: string
+  title: string,
+  release_date?: string
+  genre_ids: Array<number>
 }
 
 export interface IRoute {
