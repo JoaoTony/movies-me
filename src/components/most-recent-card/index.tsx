@@ -23,7 +23,7 @@ const MostRecentCard: FC<MostRecntCardProps> = ({
       img: poster_path, 
       title, 
       stars: vote_average, 
-      description: overview || '',
+      description: overview,
       release_date,
       genre_ids 
     })

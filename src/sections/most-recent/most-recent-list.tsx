@@ -9,7 +9,7 @@ const MostRecentList: FC<{ type: 'recent' | 'seen' }> = ({ type }) => {
   const [data, setData] = useState<NowPlayingResult[]>([])
 
   useEffect(() => {
-    getFetcher<NowPlaying>(type === 'seen' ? 'popular' : 'top_rated').then(res => {
+    getFetcher<NowPlaying>(type === 'seen' ? 'popular' : 'top_rated', 1).then(res => {
       setData(res.data.results)
     })
 

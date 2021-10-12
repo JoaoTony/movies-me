@@ -1,8 +1,8 @@
 import { kay, baseURL } from "./api"
 
-const fetcher= (method: string) => async <T>(url: string, body?: Object) => {
+const fetcher= (method: string) => async <T>(url: string, page: number , body?: Object) => {
 
-  const res = await fetch(`${baseURL}/${url}?api_key=${kay}&language=pt-BR&page=1`, {
+  const res = await fetch(`${baseURL}/${url}?api_key=${kay}&language=pt-BR&page=${page}`, {
     method,
     body: JSON.stringify(body)
   })

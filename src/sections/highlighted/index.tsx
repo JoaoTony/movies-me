@@ -2,13 +2,10 @@ import React, { FC, useRef, useState, useEffect } from 'react'
 import { Dimensions, Animated, View } from 'react-native'
 import { Container } from './highlighted.styles'
 import HighlightedCard from '../../components/highlighted-card'
-import { HighlightedProps, DataFiltered } from './highlighted.types'
 import { getFetcher } from '../../services/fetcher'
 import { OnlyExtremeSpacing } from './highlighted.utils'
 
 import { NowPlaying, NowPlayingResult } from '../../types/api.types'
-
-import { data as fakeData } from '../../constants/fake-data'
 
 const { width } = Dimensions.get('screen')
 const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
@@ -16,24 +13,19 @@ const SPACING_ITEM_SIZE = (width / 1.9) / 2.5
 const Highlighted: FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current
   const [data, setData] = useState<NowPlayingResult[]>([])
-  const [dataa, setDataa] = useState<any>([])
   
   useEffect(() => {
 
-    getFetcher<NowPlaying>('now_playing').then(res => {
+    getFetcher<NowPlaying>('now_playing', 1).then(res => {
       setData(res.data.results)
-      console.log(res.data.results[0])
     })
 
   }, [])
-  
-
-  console.log(data)
 
   return (
     <Container>
       <Animated.FlatList
-        data={[OnlyExtremeSpacing,...data, OnlyExtremeSpacing]}
+        data={[OnlyExtremeSpacing(1),...data, OnlyExtremeSpacing(2)]}
         keyExtractor={item => item.id.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}

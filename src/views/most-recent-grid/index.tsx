@@ -13,15 +13,16 @@ import { getFetcher } from '../../services/fetcher'
 const MostRecentGrid: FC = () => {
   const route = useRoute()
   const [data, setData] = useState<NowPlayingResult[]>([])
+  const [page, setPage] = useState(1)
 
   const { params } = route as RouteProp<any>
 
   useEffect(() => {
-    getFetcher<NowPlaying>(params?.type === 'seen' ? 'popular' : 'top_rated').then(res => {
-      setData(res.data.results)
+    getFetcher<NowPlaying>(params?.type === 'seen' ? 'popular' : 'top_rated', page).then(res => {
+      setData(data.concat(res.data.results))
     })
 
-  }, [])
+  }, [page])
 
   return ( 
     <Container>
@@ -35,6 +36,10 @@ const MostRecentGrid: FC = () => {
         keyExtractor={item => item.id.toString()}
         numColumns={2}
         showsVerticalScrollIndicator={false}
+        onEndReachedThreshold = {0.01} 
+        onEndReached = {() => { 
+          setPage(page + 1) 
+        }} 
         renderItem={({ item }) => (
           <MostRecentCard 
             cardSize="large"
